@@ -41,9 +41,9 @@ public class RegexTest {
 	public void testApplyRegex(){
 		
 		try {
+			
 			Regex.apply(path.toString(), regex, replacement);
 			Assert.assertEquals("0AAAAAAAAAAA", Files.readAllLines(path, StandardCharsets.UTF_8).get(0));
-			
 		} 
 		catch (IOException e) {
 			
