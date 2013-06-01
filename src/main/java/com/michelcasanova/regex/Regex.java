@@ -102,6 +102,7 @@ public class Regex {
 
 
 	private static void applyRegexToFile(final String regex,final String replacement, final BufferedReader input, BufferedWriter output) throws IOException {
+		
 		String line;
 		String lineUpdated;
 		

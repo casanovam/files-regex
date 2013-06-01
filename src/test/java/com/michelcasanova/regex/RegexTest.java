@@ -22,7 +22,6 @@ public class RegexTest {
 	@Before
 	public void setUp(){
 		
-		
 		try {
 			
 			path = Files.createTempFile(null, null);
@@ -35,25 +34,21 @@ public class RegexTest {
 			
 			e.printStackTrace();
 		}
-
-		
 	}
 	
 	
 	@Test
 	public void testApplyRegex(){
 		
-		
 		try {
-			
 			Regex.apply(path.toString(), regex, replacement);
 			Assert.assertEquals("0AAAAAAAAAAA", Files.readAllLines(path, StandardCharsets.UTF_8).get(0));
 			
-		} catch (IOException e) {
-
+		} 
+		catch (IOException e) {
+			
+			Assert.assertTrue("Exception: "+e.toString(), false);
 		}
-		
-		
 	}
 	
 	
