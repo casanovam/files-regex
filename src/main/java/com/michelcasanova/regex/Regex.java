@@ -21,7 +21,7 @@ import java.util.List;
  */
 public class Regex {
 	
-	private static final String TEMP_FILE_NAME = "temp.txt";
+	private static final String TEMP_FILE_NAME = "temp.tmp";
 	private static final Charset DEFAULT_ENCODING = StandardCharsets.UTF_8;
 	
 	/**
