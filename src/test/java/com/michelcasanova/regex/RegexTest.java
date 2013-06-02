@@ -79,7 +79,6 @@ public class RegexTest {
 		} 
 		catch (IOException e) {
 			
-			e.printStackTrace();
 			Assert.assertTrue("Exception: "+e.toString(), false);
 		}
 	}
