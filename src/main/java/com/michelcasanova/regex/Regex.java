@@ -161,13 +161,11 @@ public class Regex {
 	private static void applyRegexToFile(List<Conversion> conversions, final BufferedReader input, BufferedWriter output) throws IOException {
 		
 		String line;
-		String lineUpdated;
-		
+
 		while( (line = input.readLine()) != null){
 			
-			lineUpdated = applyAllRegEx(line, conversions);
-			
-			output.write(lineUpdated+"\n");
+			line = applyAllRegEx(line, conversions);
+			output.write(line+"\n");
 		}
 	}
 	
