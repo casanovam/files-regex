@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.092" errors="0" skipped="0" tests="1" name="com.michelcasanova.regex.RegexTest">
+<testsuite failures="0" time="0.098" errors="0" skipped="1" tests="3" name="com.michelcasanova.regex.RegexTest">
   <properties>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="env.SYSTEMROOT" value="C:\windows"/>
@@ -131,4 +131,8 @@
     <property name="env.PROCESSOR_LEVEL" value="6"/>
   </properties>
   <testcase time="0.068" classname="com.michelcasanova.regex.RegexTest" name="testApplyRegex"/>
+  <testcase time="0.006" classname="com.michelcasanova.regex.RegexTest" name="testApplyRegexList"/>
+  <testcase time="0.007" classname="com.michelcasanova.regex.RegexTest" name="testApplyRegexToFolder">
+    <skipped/>
+  </testcase>
 </testsuite>

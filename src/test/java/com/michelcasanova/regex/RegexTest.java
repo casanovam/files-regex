@@ -1,6 +1,5 @@
 package com.michelcasanova.regex;
 
-
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -11,6 +10,7 @@ import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class RegexTest {
@@ -26,7 +26,6 @@ public class RegexTest {
 			
 			path = Files.createTempFile(null, null);
 			Files.write(path, createMockFileContent(), StandardCharsets.UTF_8, StandardOpenOption.CREATE);
-			
 			regex = "^A";
 			replacement = "0";
 		} 
@@ -51,6 +50,39 @@ public class RegexTest {
 		}
 	}
 	
+	@Test
+	public void testApplyRegexList(){
+		
+		try {
+			
+			List<Conversion> regexList = new ArrayList<Conversion>();
+			Conversion conversion = new Conversion(null, null);
+			conversion.setRegex(regex);
+			conversion.setReplacement(replacement);
+			regexList.add(conversion);
+			Regex.apply(path.toString(), regexList);
+			Assert.assertEquals("0AAAAAAAAAAA", Files.readAllLines(path, StandardCharsets.UTF_8).get(0));
+		} 
+		catch (IOException e) {
+			
+			Assert.assertTrue("Exception: "+e.toString(), false);
+		}
+	}
+	
+	@Test
+	@Ignore
+	public void testApplyRegexToFolder(){
+		
+		try {
+			
+			Regex.apply(path.getParent().toString(), regex, replacement);
+		} 
+		catch (IOException e) {
+			
+			e.printStackTrace();
+			Assert.assertTrue("Exception: "+e.toString(), false);
+		}
+	}
 	
 	private List<String> createMockFileContent(){
 		
